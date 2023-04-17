@@ -1,6 +1,10 @@
 package com.example.network_yc_
-
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
 import java.io.File
+
+
 
 data class Network(var nom_reseau: String, var networkImage: Int, var objet: Array<String>, var number_piece: String)
 
