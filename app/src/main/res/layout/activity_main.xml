@@ -4,14 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
     <ListView
         android:id="@+id/listNetwork"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="411dp"
+        android:layout_height="649dp"
         tools:ignore="MissingConstraints"
         tools:listitem="@layout/list_network"
 
         />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="650dp">
+
+        <Button
+            android:id="@+id/addNetwork"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:drawableTop="@android:drawable/ic_menu_add"
+            android:text="Ajouter un reseau" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
