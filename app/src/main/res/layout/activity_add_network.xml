@@ -12,18 +12,35 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="1dp"
+
+        >
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="71dp"
-            android:text="Nom du reseau :"
+            android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            
+            android:text="Nom du reseau :"
             android:textSize="20dp"
-
+            android:layout_marginLeft="20dp"
             />
+
+        <EditText
+            android:id="@+id/nameNetwork"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:text="Nombre de piece:"
+            android:textSize="20dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
