@@ -4,8 +4,6 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.encodeToString
 import java.io.File
 
-
-
 data class Network(var nom_reseau: String, var networkImage: Int, var objet: Array<String>, var number_piece: String)
 
 fun readNetworksFromFile(filename: String): List<Network> {
