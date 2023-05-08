@@ -16,7 +16,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.NetworkYC.NoActionBar">
             <intent-filter>

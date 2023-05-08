@@ -7,8 +7,8 @@
     tools:context=".addNetwork">
 
     <LinearLayout
-        android:layout_width="410dp"
-        android:layout_height="720dp"
+        android:layout_width="390dp"
+        android:layout_height="687dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
@@ -20,11 +20,10 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="40dp"
             android:text="Nom du reseau :"
-            android:textSize="20dp"
-            android:layout_marginLeft="20dp"
-            />
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/nameNetwork"

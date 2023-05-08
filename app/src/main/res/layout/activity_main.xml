@@ -8,31 +8,29 @@
     android:backgroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNetwork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/cree"
+        android:src="@drawable/add_icon"
+        app:backgroundTint="@color/white"
+        app:fabCustomSize="75dp"
+        app:fabSize="normal"
+        app:maxImageSize="50dp"
+        tools:layout_editor_absoluteX="302dp"
+        tools:layout_editor_absoluteY="716dp" />
+
     <ListView
         android:id="@+id/listNetwork"
-        android:layout_width="411dp"
-        android:layout_height="649dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"
-        tools:listitem="@layout/list_network"
+        tools:listitem="@layout/list_network">
 
-        />
+    </ListView>
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="650dp">
-
-        <Button
-            android:id="@+id/addNetwork"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:drawableTop="@android:drawable/ic_menu_add"
-            android:text="Ajouter un reseau" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
