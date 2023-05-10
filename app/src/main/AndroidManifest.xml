@@ -12,6 +12,9 @@
         android:theme="@style/Theme.NetworkYC"
         tools:targetApi="31">
         <activity
+            android:name=".vueGraph"
+            android:exported="false" />
+        <activity
             android:name=".addNetwork"
             android:exported="false" />
         <activity

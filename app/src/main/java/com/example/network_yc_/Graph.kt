@@ -1,45 +1,45 @@
 package com.example.network_yc_
-class Graph {
 
-    // Liste des objets connectés dans le graphe
-    val objects = mutableListOf<GraphObject>()
+import com.google.gson.Gson
+import android.view.View
+import java.io.File
 
-    // Liste des connexions entre les objets
-    val connections = mutableListOf<GraphConnection>()
+class Graph(var label: String, var nbpiece: String, var imageId: Int) {
 
-    // Fonction pour réinitialiser le réseau
-    fun resetNetwork() {
-        objects.clear()
-        connections.clear()
+    val objets = mutableListOf<Objet>()
+    val connexions = mutableListOf<Connexion>()
+
+
+    fun reinitialiserReseau() {
+        objets.clear()
+        connexions.clear()
     }
 
-    // Fonction pour sauvegarder le réseau dans la mémoire interne
-    fun saveNetwork() {
-        // Code pour sauvegarder le graphe dans la mémoire interne
+    fun saveReseau(graph: Graph) {
+        val gson = Gson()
+        val jsonString = gson.toJson(graph)
+        File("${graph.label}.json").writeText(jsonString)
     }
 
-    // Fonction pour afficher un réseau sauvegardé dans la mémoire interne
-    fun loadNetwork() {
-        // Code pour charger le graphe depuis la mémoire interne
+    fun load(name: String): Graph? {
+        val gson = Gson()
+        val jsonString = File("${name}.json").readText()
+        return gson.fromJson(jsonString, Graph::class.java)
     }
 
-    // Fonction pour ajouter un objet connecté au graphe
-    fun addObject(connectedObject: GraphObject) {
-        objects.add(connectedObject)
+    fun addGraphObject(obj: Objet) {
+        objets.add(obj)
     }
 
-    // Fonction pour ajouter une connexion entre deux objets connectés
-    fun addConnection(connection: GraphConnection) {
-        connections.add(connection)
+    fun removeGraphObject(obj: Objet) {
+        objets.remove(obj)
     }
 
-    // Fonction pour modifier un objet connecté dans le graphe
-    fun modifyObject(connectedObject: GraphObject) {
-        // Code pour modifier l'objet connecté dans le graphe
+    fun addGraphConnection(conn: Connexion) {
+        connexions.add(conn)
     }
 
-    // Fonction pour modifier une connexion dans le graphe
-    fun modifyConnection(connection: GraphConnection) {
-        // Code pour modifier la connexion dans le graphe
+    fun removeGraphConnection(conn: Connexion) {
+        connexions.remove(conn)
     }
 }
