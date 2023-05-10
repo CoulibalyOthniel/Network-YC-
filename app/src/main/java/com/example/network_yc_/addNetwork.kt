@@ -1,17 +1,16 @@
 package com.example.network_yc_
 
 import android.content.Intent
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import android.widget.ImageView
-import com.google.android.material.textfield.TextInputLayout
+import android.widget.Spinner
+
 
 class addNetwork : AppCompatActivity() {
 
-    private lateinit var graph: Graph
+    private lateinit var graphOne: Graph
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_network)
@@ -21,20 +20,19 @@ class addNetwork : AppCompatActivity() {
         actionBar?.title = "Creation d'un reseau"
 
         val nomReseau = findViewById<EditText>(R.id.nameNetwork)
-        val nbpiece = findViewById<EditText>(R.id.numPiece)
-        val imageName : View = findViewById(R.id.addImage)
+        val nbpiece = findViewById<Spinner>(R.id.nbpiece)
         val confirmReseau : View = findViewById(R.id.confirm)
 
 
 
         val nomValue = nomReseau.text.toString()
-        val nbvalue = nbpiece.text.toString()
-        val imageId = imageName.id
+        val nbvalue = nbpiece.selectedItem.toString()
+
 
 
         confirmReseau.setOnClickListener{
-           graph = Graph(nomValue,nbvalue,imageId)
-            graph.saveReseau(graph)
+           graphOne = Graph(nomValue,nbvalue)
+            graphOne.saveReseau(graphOne)
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

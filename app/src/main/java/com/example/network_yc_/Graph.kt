@@ -16,8 +16,9 @@ class Graph(var label: String, var nbpiece: String) {
     }
 
     fun saveReseau(graph: Graph) {
-        val gson = Gson()
-        val jsonString = gson.toJson(graph)
+        
+        var gson = Gson()
+        var jsonString = gson.toJson(graph)
         File("${graph.label}.json").writeText(jsonString)
     }
 
