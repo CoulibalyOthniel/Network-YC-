@@ -26,15 +26,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        graphArrayList = ArrayList()
 
-        val gson = Gson()
-        val directory = File(".")
-        val graphs = directory.listFiles { file -> file.isFile && file.name.endsWith(".json") }
-        for (graph in graphs){
-            val rs = gson.fromJson(graph.readText(), Graph::class.java)
-            graphArrayList.add(rs)
-        }
 
     }
 

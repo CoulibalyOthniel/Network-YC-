@@ -4,7 +4,7 @@ import com.google.gson.Gson
 import android.view.View
 import java.io.File
 
-class Graph(var label: String, var nbpiece: String, var imageId: Int) {
+class Graph(var label: String, var nbpiece: String) {
 
     val objets = mutableListOf<Objet>()
     val connexions = mutableListOf<Connexion>()

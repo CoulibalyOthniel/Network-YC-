@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
 
 class MyAdapter(private val context :Activity, private val arrayList: ArrayList<Graph>) : ArrayAdapter<Graph>(context, R.layout.list_network,arrayList) {
@@ -16,11 +17,9 @@ class MyAdapter(private val context :Activity, private val arrayList: ArrayList<
         val view : View = inflater.inflate(R.layout.list_network, null)
 
 
-        val imageView : ImageView = view.findViewById(R.id.imageNetwork)
         val network_name : TextView = view.findViewById(R.id.nameNetwork)
         val number_piece : TextView = view.findViewById(R.id.PlanAppart)
 
-        imageView.setImageResource(arrayList[position].imageId)
         network_name.text = arrayList[position].label.toString()
         number_piece.text = arrayList[position].nbpiece.toString()
 
