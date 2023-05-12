@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import android.view.View
 import com.google.gson.reflect.TypeToken
 import java.io.File
+import java.io.IOException
 
 
 class Graph {
@@ -25,12 +26,32 @@ class Graph {
     }
 
     fun saveReseau(context: Context, graph: Graph) {
-        val file = File(context.filesDir, "graphs.json")
-            val gson = Gson()
-            val jsonContent = file.readText()
-            val graphList = gson.fromJson<ArrayList<Graph>>(jsonContent, object : TypeToken<ArrayList<Graph>>() {}.type)
-            graphList.add(graph)
+        val jsonString = "[]"
+        val fileName = "graphs.json"
+        val internalStorageDir = context.filesDir
+        val file = File(internalStorageDir, fileName)
+        if (!file.exists()) {
+            try {
+                file.createNewFile()
+                file.writeText(jsonString)
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
+        val gson = Gson()
+        val jsonContent = file.readText()
+        val graphList = gson.fromJson<ArrayList<Graph>>(jsonContent, object : TypeToken<ArrayList<Graph>>() {}.type)
+            ?: ArrayList()
+        graphList.add(graph)
+        val json = gson.toJson(graphList)
+        try {
+            file.writeText(json)
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
     }
+
+
 
     fun load(name: String): Graph? {
         val gson = Gson()
