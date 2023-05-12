@@ -7,8 +7,8 @@
     tools:context=".addNetwork">
 
     <LinearLayout
-        android:layout_width="391dp"
-        android:layout_height="802dp"
+        android:layout_width="357dp"
+        android:layout_height="615dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
@@ -18,39 +18,37 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
+            android:layout_width="327dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="150dp"
             android:text="Nom du reseau :"
             android:textSize="20dp" />
 
         <EditText
             android:id="@+id/nameNetwork"
-            android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_width="353dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
+            android:layout_width="327dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="100dp"
             android:text="Nombre de piece:"
             android:textSize="20dp" />
 
         <Spinner
             android:id="@+id/nbpiece"
-            android:layout_width="match_parent"
+            android:layout_width="357dp"
             android:layout_height="49dp"
             android:entries="@array/array_piece" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:layout_marginTop="200dp"
+            android:layout_width="355dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="300dp"
             android:orientation="horizontal">
 
             <Button
