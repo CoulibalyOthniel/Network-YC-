@@ -16,12 +16,12 @@ class MyAdapter(private val context :Activity, private val arrayList: ArrayList<
         val inflater : LayoutInflater = LayoutInflater.from(context)
         val view : View = inflater.inflate(R.layout.list_network, null)
 
-
         val network_name : TextView = view.findViewById(R.id.nameNetwork)
         val number_piece : TextView = view.findViewById(R.id.PlanAppart)
 
-        network_name.text = arrayList[position].label.toString()
-        number_piece.text = arrayList[position].nbpiece.toString()
+
+        network_name.text = arrayList[position].label
+        number_piece.text = arrayList[position].nbpiece
 
 
 

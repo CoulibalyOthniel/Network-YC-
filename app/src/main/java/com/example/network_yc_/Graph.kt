@@ -1,5 +1,6 @@
 package com.example.network_yc_
 
+import android.content.Context
 import com.google.gson.Gson
 import android.view.View
 import java.io.File
@@ -15,11 +16,11 @@ class Graph(var label: String, var nbpiece: String) {
         connexions.clear()
     }
 
-    fun saveReseau(graph: Graph) {
+    fun saveReseau(context: Context, graph: Graph) {
         
         var gson = Gson()
         var jsonString = gson.toJson(graph)
-        File("${graph.label}.json").writeText(jsonString)
+        File(context.filesDir,"${graph.label}.json").writeText(jsonString)
     }
 
     fun load(name: String): Graph? {

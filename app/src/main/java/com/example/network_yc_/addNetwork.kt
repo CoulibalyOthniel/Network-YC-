@@ -32,7 +32,7 @@ class addNetwork : AppCompatActivity() {
 
         confirmReseau.setOnClickListener{
            graphOne = Graph(nomValue,nbvalue)
-            graphOne.saveReseau(graphOne)
+            graphOne.saveReseau(this,graphOne)
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
