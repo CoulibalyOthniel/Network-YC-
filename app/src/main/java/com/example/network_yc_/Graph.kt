@@ -3,24 +3,38 @@ package com.example.network_yc_
 import android.content.Context
 import com.google.gson.Gson
 import android.view.View
+import com.google.gson.reflect.TypeToken
 import java.io.File
 
-class Graph(var label: String, var nbpiece: String) {
 
+class Graph {
+    var label: String =""
+    var nbpiece: String =""
     val objets = mutableListOf<Objet>()
     val connexions = mutableListOf<Connexion>()
 
 
+    constructor(label: String, nbpiece: String) {
+        this.label = label
+        this.nbpiece = nbpiece
+    }
     fun reinitialiserReseau() {
         objets.clear()
         connexions.clear()
     }
 
     fun saveReseau(context: Context, graph: Graph) {
-        
-        var gson = Gson()
-        var jsonString = gson.toJson(graph)
-        File(context.filesDir,"${graph.label}.json").writeText(jsonString)
+        val file = File(context.filesDir, "graphs.json")
+        if(file.exists()){
+            val gson = Gson()
+            val jsonContent = file.readText()
+            val graphList = gson.fromJson<ArrayList<Graph>>(jsonContent, object : TypeToken<ArrayList<Graph>>() {}.type)
+            graphList.add(graph)
+        } else {
+            var gson = Gson()
+            var jsonString = gson.toJson(graph)
+            file.writeText(jsonString)
+        }
     }
 
     fun load(name: String): Graph? {

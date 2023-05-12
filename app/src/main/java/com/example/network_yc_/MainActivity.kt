@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.network_yc_.databinding.ActivityMainBinding
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,20 +29,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        graphArrayList = ArrayList()
-        val fileDir = applicationContext.filesDir
-        val gson = Gson() //
-
-        fileDir.listFiles()?.forEach { file ->
-            if (file.exists()) {
-                val jsonString = file.readText()
-                val graph = gson.fromJson(jsonString, Graph::class.java)
-                name.add(graph.label)
-                graphArrayList.add(graph)
-            }
-        }
-
-
+        val jsonString = File("graphs.json").readText()
+        val gson = Gson()
+        graphArrayList = gson.fromJson(jsonString, object : TypeToken<ArrayList<Graph>>() {}.type)
 
         binding.listNetwork.isClickable = true
         binding.listNetwork.adapter = MyAdapter(this,graphArrayList)
