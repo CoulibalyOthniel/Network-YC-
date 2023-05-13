@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         val add = binding.addNetwork
         add.setOnClickListener{
-            val intent = Intent(this, addNetwork::class.java)
+            val intent = Intent(this, AddNetwork::class.java)
             startActivity(intent)
         }
 
@@ -55,11 +55,11 @@ class MainActivity : AppCompatActivity() {
         binding.listNetwork.setOnItemClickListener { parent, view, position, id ->
 
             val name = graphArrayList[position].label
-            val nbpiece = graphArrayList[position].nbpiece
+            val piece = graphArrayList[position].nbpiece
 
             val i = Intent(this, vueGraph::class.java)
             i.putExtra("label",name)
-            i.putExtra("piece",nbpiece)
+            i.putExtra("piece",piece)
             startActivity(i)
         }
 

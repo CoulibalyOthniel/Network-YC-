@@ -11,11 +11,17 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_main">Network-YC</string>
     <string name="cree">Créer</string>
+    <string name="reseau_domicile">Reseau domicile</string>
+    <string name="_3_pieces">3 pieces</string>
+    <string name="nom_du_reseau">Nom du reseau :</string>
+    <string name="confirmer">Confirmer</string>
+    <string name="nombre_de_piece">Nombre de piece:</string>
+    <string name="nom_reseau">Nom du reseau</string>
 
     <string-array name="array_piece">
-        <item>un</item>
-        <item>deux</item>
-        <item>trois</item>
-        <item>quatre</item>
+        <item>une_piece</item>
+        <item>deux_pieces</item>
+        <item>trois_pieces</item>
+        <item>quatre_pieces</item>
     </string-array>
 </resources>

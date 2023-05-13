@@ -21,7 +21,7 @@
             android:name=".vueGraph"
             android:exported="true" />
         <activity
-            android:name=".addNetwork"
+            android:name=".AddNetwork"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

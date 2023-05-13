@@ -16,34 +16,31 @@
 
         >
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="327dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Nom du reseau :"
-            android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/nameNetwork"
+            android:id="@+id/nomNetwork"
             android:layout_width="353dp"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
+            android:hint="@string/nom_reseau"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:autofillHints="" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="327dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Nombre de piece:"
-            android:textSize="20dp" />
+            android:layout_height="46dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/nombre_de_piece"
+            android:textSize="20sp" />
 
         <Spinner
             android:id="@+id/nbpiece"
             android:layout_width="357dp"
             android:layout_height="49dp"
-            android:entries="@array/array_piece" />
+            android:entries="@array/array_piece"
+            />
 
         <LinearLayout
             android:layout_width="355dp"
@@ -53,12 +50,12 @@
 
             <Button
                 android:id="@+id/confirm"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
-                android:text="Confirmer" />
+                android:text="@string/confirmer" />
         </LinearLayout>
 
     </LinearLayout>
