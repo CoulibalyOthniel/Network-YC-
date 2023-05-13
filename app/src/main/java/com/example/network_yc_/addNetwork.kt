@@ -24,10 +24,11 @@ class AddNetwork : AppCompatActivity() {
         val nbpiece = findViewById<Spinner>(R.id.nbpiece)
         val confirmReseau : View = findViewById(R.id.confirm)
 
-        val nomValue = nomReseau.text.toString()
-        val nbvalue = nbpiece.selectedItem.toString()
+
 
         confirmReseau.setOnClickListener{
+            val nomValue = nomReseau.text.toString()
+            val nbvalue = nbpiece.selectedItem.toString()
             graphOne = Graph(nomValue,nbvalue)
             graphOne.saveReseau(this,graphOne)
             val intent = Intent(this, MainActivity::class.java)

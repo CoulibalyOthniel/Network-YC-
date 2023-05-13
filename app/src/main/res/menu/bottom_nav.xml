@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/vue_graph"
+        android:id="@+id/vueGraph"
+        android:icon="@drawable/vue_normal"
+        />
+    <item android:title="@string/vue_custom"
+        android:id="@+id/vueCustom"
+        android:icon="@drawable/vue_custom"
+        />
+</menu>

@@ -6,9 +6,7 @@ import android.graphics.ColorFilter
 
 class DrawableGraph(val graph: Graph) : android.graphics.drawable.Drawable() {
     override fun draw(canvas: Canvas) {
-        for (obj in graph.objets){
 
-        }
     }
 
     override fun setAlpha(alpha: Int) {}

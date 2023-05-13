@@ -17,6 +17,9 @@
     <string name="confirmer">Confirmer</string>
     <string name="nombre_de_piece">Nombre de piece:</string>
     <string name="nom_reseau">Nom du reseau</string>
+    <string name="vue_graph">Vue Graph</string>
+    <string name="vue_custom">Vue Custom</string>
+    <string name="description_de_la_vue_d_roulante_imbriqu_e">Description de la vue déroulante imbriquée</string>
 
     <string-array name="array_piece">
         <item>une_piece</item>
