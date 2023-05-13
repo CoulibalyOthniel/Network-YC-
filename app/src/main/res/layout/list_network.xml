@@ -28,7 +28,7 @@
                 app:civ_border_width="2dp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="125dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
@@ -36,17 +36,18 @@
 
                 <TextView
                     android:id="@+id/nameNetwork"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="142dp"
+                    android:layout_height="25dp"
                     android:text="Reseau domicile"
                     android:textColor="@color/black"
-                    android:textSize="26sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/PlanAppart"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="3 pieces" />
+                    android:text="3 pieces"
+                    android:textSize="10sp" />
             </LinearLayout>
 
         </LinearLayout>

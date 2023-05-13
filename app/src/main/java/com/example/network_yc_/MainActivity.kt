@@ -14,14 +14,14 @@ class MainActivity : AppCompatActivity() {
 
 
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var graphArrayList : ArrayList<Graph>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var graphArrayList = ArrayList<Graph>()
+        graphArrayList = ArrayList()
         val jsonVide = "[]"
         val fileName = "graphs.json"
         val internalStorageDir = applicationContext.filesDir

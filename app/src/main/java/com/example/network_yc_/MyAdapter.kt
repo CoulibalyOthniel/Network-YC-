@@ -1,5 +1,6 @@
 package com.example.network_yc_
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
@@ -9,17 +10,18 @@ import android.widget.TextView
 
 class MyAdapter(private val context:Activity, private val arrayList: ArrayList<Graph>) : ArrayAdapter<Graph>(context, R.layout.list_network,arrayList) {
 
+    @SuppressLint("ViewHolder", "InflateParams")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
         val inflater : LayoutInflater = LayoutInflater.from(context)
         val view : View = inflater.inflate(R.layout.list_network, null)
 
-        val network_name : TextView = view.findViewById(R.id.nameNetwork)
-        val number_piece : TextView = view.findViewById(R.id.PlanAppart)
+        val networkName : TextView = view.findViewById(R.id.nameNetwork)
+        val numberPiece : TextView = view.findViewById(R.id.PlanAppart)
 
 
-        network_name.text = arrayList[position].label
-        number_piece.text = arrayList[position].nbpiece
+        networkName.text = arrayList[position].label
+        numberPiece.text = arrayList[position].nbpiece
 
 
 
