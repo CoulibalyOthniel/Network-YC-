@@ -10,7 +10,7 @@ import com.google.gson.reflect.TypeToken
 import java.io.File
 
 class vueGraph : AppCompatActivity() {
-    
+
     private lateinit var graphs : ArrayList<Graph>
     @SuppressLint("UseCompatLoadingForDrawables", "DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
