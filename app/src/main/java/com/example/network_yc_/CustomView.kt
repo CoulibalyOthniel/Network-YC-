@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.MotionEvent
@@ -16,20 +17,22 @@ class CustomView(context: Context, attrs: AttributeSet?) : AppCompatImageView(co
 
     private var graph : Graph = Graph()
     private val drawableGraph = DrawableGraph(graph)
+    private var selectedObject: Objet? = null
+    private var connectionStart: Objet? = null
+    private var connectionEnd: Objet? = null
 
-    @SuppressLint("DrawAllocation")
+    @SuppressLint("DrawAllocation", "SuspiciousIndentation")
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
 
         val sharedPreferences: SharedPreferences = context.getSharedPreferences("MyName", Context.MODE_PRIVATE)
         val name = sharedPreferences.getString("Name", "")
         val jsonString = File(context.filesDir,"graphs.json")
-        if (jsonString.exists()) {
             jsonString.readText()
             val graphs : ArrayList<Graph> = Gson().fromJson(jsonString, object : TypeToken<ArrayList<Graph>>() {}.type)
             graph = graphs.find { it.label == "${name}"  }!!
             graph.bounds = RectF(0f, 0f, measuredWidth.toFloat(), measuredHeight.toFloat())
-        }
+
 
     }
 
@@ -38,19 +41,45 @@ class CustomView(context: Context, attrs: AttributeSet?) : AppCompatImageView(co
         drawableGraph.draw(canvas)
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent): Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
-                // Lorsqu'on touche l'écran, on commence à dessiner une connexion
-                // ou à déplacer un objet en fonction du mode de l'application
+
+                val x = event.x
+                val y = event.y
+
+                selectedObject = graph.findObjectAt(x, y,graph)
+
+                selectedObject?.let {
+                    connectionStart = it
+                }
             }
             MotionEvent.ACTION_MOVE -> {
-                // Lorsqu'on déplace le doigt, on met à jour la connexion temporaire
-                // ou l'objet en train d'être déplacé
+
+                val x = event.x
+                val y = event.y
+
+                selectedObject?.let {
+                    it.position.centerX()
+                    it.position.centerY()
+                }
             }
             MotionEvent.ACTION_UP -> {
-                // Lorsqu'on lâche le doigt, on crée la connexion ou on termine le déplacement
-                // de l'objet en fonction du mode de l'application
+
+                val x = event.x
+                val y = event.y
+
+                val touchedObject = graph.findObjectAt(x, y,graph)
+                connectionEnd = touchedObject
+                if (connectionStart != null && connectionEnd != null && connectionStart != connectionEnd) {
+                    graph.addGraphConnection(Connexion("Line", Color.BLACK,
+                        connectionStart!!, connectionEnd!!))
+                }
+
+                selectedObject = null
+                connectionStart = null
+                connectionEnd = null
             }
         }
         invalidate()

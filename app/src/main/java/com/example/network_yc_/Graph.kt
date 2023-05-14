@@ -73,5 +73,15 @@ class Graph {
         connexions.remove(conn)
     }
 
+    fun findObjectAt(x: Float, y: Float,graph: Graph): Objet? {
+        for (graphObject in graph.objets) {
+
+            if (graphObject.position.contains(x, y)) {
+                return graphObject
+            }
+        }
+        return null
+    }
+
 }
 
