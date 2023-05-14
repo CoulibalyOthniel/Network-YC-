@@ -29,7 +29,9 @@ class AddNetwork : AppCompatActivity() {
         confirmReseau.setOnClickListener{
             val nomValue = nomReseau.text.toString()
             val nbvalue = nbpiece.selectedItem.toString()
-            graphOne = Graph(nomValue,nbvalue)
+            graphOne = Graph()
+            graphOne.label = nomValue
+            graphOne.nbpiece = nbvalue
             graphOne.saveReseau(this,graphOne)
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

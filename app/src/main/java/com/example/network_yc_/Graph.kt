@@ -16,10 +16,6 @@ class Graph {
     var bounds = RectF()
 
 
-    constructor(label: String, nbpiece: String) {
-        this.label = label
-        this.nbpiece = nbpiece
-    }
 
     fun reinitialiserReseau() {
         objets.clear()
@@ -54,11 +50,12 @@ class Graph {
 
 
 
-    fun chargerGraph(context: Context,name: String): Graph? {
+    fun chargerGraph(context: Context, name: String): Graph? {
         val jsonString = File(context.filesDir,"graphs.json").readText()
         val graphs : ArrayList<Graph> = Gson().fromJson(jsonString, object : TypeToken<ArrayList<Graph>>() {}.type)
         return graphs.find { it.label == "${name}"  }
     }
+
 
     fun addGraphObject(obj: Objet) {
         objets.add(obj)

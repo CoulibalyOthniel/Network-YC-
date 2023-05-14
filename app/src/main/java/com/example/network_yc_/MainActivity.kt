@@ -1,5 +1,6 @@
 package com.example.network_yc_
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -56,6 +57,12 @@ class MainActivity : AppCompatActivity() {
 
             val name = graphArrayList[position].label
             val piece = graphArrayList[position].nbpiece
+
+            val sharedPreferences = getSharedPreferences("MyName", Context.MODE_PRIVATE)
+            val word = sharedPreferences.edit()
+            word.putString("Name",name)
+            word.apply()
+
 
             val i = Intent(this, vueGraph::class.java)
             i.putExtra("label",name)

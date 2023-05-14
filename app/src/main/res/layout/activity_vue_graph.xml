@@ -12,39 +12,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="InvalidId,UselessLeaf">
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
+        <com.example.network_yc_.CustomView
+            android:id="@+id/custom_view"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:contentDescription="@string/description_de_la_vue_d_roulante_imbriqu_e">
+            android:scrollbars="horizontal|vertical"
+            app:layout_constraintEnd_toStartOf="@+id/bottomNavigationView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
 
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/description_de_la_vue_d_roulante_imbriqu_e">
-
-                <com.example.network_yc_.CustomView
-                    android:id="@+id/custom_view"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp">
-
-                </com.example.network_yc_.CustomView>
-
-            </HorizontalScrollView>
-
-        </androidx.core.widget.NestedScrollView>
-
-
-    </FrameLayout>
+        </com.example.network_yc_.CustomView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
