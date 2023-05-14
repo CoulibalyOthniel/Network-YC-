@@ -9,7 +9,7 @@ import android.graphics.Rect
 import androidx.core.content.ContextCompat
 
 
-class DrawableGraph(val context: Context, val graph: Graph) : android.graphics.drawable.Drawable() {
+class DrawableGraph(val context: Context, var graph: Graph?) : android.graphics.drawable.Drawable() {
 
 
     private val objPaint = Paint().apply {
@@ -25,16 +25,16 @@ class DrawableGraph(val context: Context, val graph: Graph) : android.graphics.d
 
     override fun draw(canvas: Canvas) {
 
-        for (obj in graph.objets) {
-            canvas.drawCircle(obj.x.toFloat(), obj.y.toFloat(), 50f, objPaint)
+        for (obj in graph?.objets!!) {
+            canvas.drawCircle(obj.x, obj.y, 50f, objPaint)
         }
 
-        for (conn in graph.connexions) {
+        for (conn in graph?.connexions!!) {
             canvas.drawLine(
-                conn.object1.x.toFloat(),
-                conn.object1.y.toFloat(),
-                conn.object2.x.toFloat(),
-                conn.object2.y.toFloat(),
+                conn.object1.x,
+                conn.object1.y,
+                conn.object2.x,
+                conn.object2.y,
                 connPaint
             )
         }
