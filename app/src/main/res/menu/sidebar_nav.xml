@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view" >
+
+     <item android:title="Action">
+
+          <menu>
+               <item
+                   android:title="Ajouter Objet"
+                   android:id="@+id/addObject"
+                   android:icon="@drawable/objet">
+               </item>
+               <item
+                   android:title="Ajouter Connexion"
+                   android:id="@+id/addConnexion"
+                   android:icon="@drawable/connexion">
+               </item>
+          </menu>
+
+     </item>
+
+     <item android:title="Graphe">
+
+          <menu>
+
+               <item
+                   android:title="Reinitialiser Reseau"
+                   android:id="@+id/resetReseau"
+                   android:icon="@drawable/reset">
+               </item>
+
+               <item
+                   android:title="Sauvegarder Reseau"
+                   android:id="@+id/saveReseau"
+                   android:icon="@drawable/sauvegarder">
+               </item>
+
+          </menu>
+
+     </item>
+</menu>
