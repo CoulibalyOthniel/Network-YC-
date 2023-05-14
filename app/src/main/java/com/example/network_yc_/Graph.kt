@@ -1,8 +1,8 @@
 package com.example.network_yc_
 
 import android.content.Context
+import android.graphics.RectF
 import com.google.gson.Gson
-import android.view.View
 import com.google.gson.reflect.TypeToken
 import java.io.File
 import java.io.IOException
@@ -13,6 +13,7 @@ class Graph {
     var nbpiece: String = ""
     val objets = mutableListOf<Objet>()
     val connexions = mutableListOf<Connexion>()
+    var bounds = RectF()
 
 
     constructor(label: String, nbpiece: String) {
@@ -53,10 +54,10 @@ class Graph {
 
 
 
-    fun load(name: String): Graph? {
-        val gson = Gson()
-        val jsonString = File("${name}.json").readText()
-        return gson.fromJson(jsonString, Graph::class.java)
+    fun chargerGraph(context: Context,name: String): Graph? {
+        val jsonString = File(context.filesDir,"graphs.json").readText()
+        val graphs : ArrayList<Graph> = Gson().fromJson(jsonString, object : TypeToken<ArrayList<Graph>>() {}.type)
+        return graphs.find { it.label == "${name}"  }
     }
 
     fun addGraphObject(obj: Objet) {

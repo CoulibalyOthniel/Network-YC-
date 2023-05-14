@@ -16,6 +16,16 @@
                    android:id="@+id/addConnexion"
                    android:icon="@drawable/connexion">
                </item>
+               <item
+                   android:title="Modifier Objet"
+                   android:id="@+id/editObject"
+                   android:icon="@drawable/edit_objet">
+               </item>
+               <item
+                   android:title="Modifier Connexion"
+                   android:id="@+id/editConnexion"
+                   android:icon="@drawable/edit_connexion">
+               </item>
           </menu>
 
      </item>

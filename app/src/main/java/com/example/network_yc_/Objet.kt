@@ -2,7 +2,11 @@ package com.example.network_yc_
 
 
 
-data class Objet(val name: String, var x: Float, var y: Float) {
+import android.graphics.RectF
+
+
+data class Objet(val name: String, var position: RectF, var color: Int) {
+
 
 
 }

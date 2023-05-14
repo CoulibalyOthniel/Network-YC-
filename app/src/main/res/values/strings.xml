@@ -20,6 +20,8 @@
     <string name="vue_graph">Vue Graph</string>
     <string name="vue_custom">Vue Custom</string>
     <string name="description_de_la_vue_d_roulante_imbriqu_e">Description de la vue déroulante imbriquée</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 
     <string-array name="array_piece">
         <item>une_piece</item>

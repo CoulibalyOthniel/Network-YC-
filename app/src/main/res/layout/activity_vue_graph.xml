@@ -32,12 +32,12 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/description_de_la_vue_d_roulante_imbriqu_e">
 
-                <ImageView
-                    android:id="@+id/imageReseau"
-                    android:layout_width="1000dp"
-                    android:layout_height="1000dp"
-                    app:srcCompat="@drawable/a"
-                    tools:ignore="ContentDescription" />
+                <com.example.network_yc_.CustomView
+                    android:id="@+id/custom_view"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp">
+
+                </com.example.network_yc_.CustomView>
 
             </HorizontalScrollView>
 
